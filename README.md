@@ -21,7 +21,8 @@ void main()
 ## 方法说明：
 - ```void initLCD(u8 position,GPIO_TypeDef* DATA_PORT)```	*初始化LCD position->显示位置 DATA_PORT->数据端口*
 - ```void writeComd(u8 comd)``` 		*写指令*
-- ```void writeData(u8 data)```		*写数据*
+- ```void writeData(u8 data)```		*写数据*- 
+- ```void writeText(u8* text)```		*写文字*
 - ```void deleteData()```					*删除一位*
 - ```void showCursor(u8 stopFlash)```	*显示光标 stopFLash->0:光标闪烁 1:光标不闪烁*
 - ```void closeCursor()```					*关闭光标*

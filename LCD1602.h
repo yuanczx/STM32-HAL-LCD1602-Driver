@@ -12,4 +12,5 @@ void writeData(u8);//写数据
 void deleteData();//删除一位
 void showCursor(u8);//显示光标 参数为光标是否闪烁 0：光标闪烁 1：光标不闪烁
 void closeCursor(); //关闭光标
+void writeText(u8*)//写入文字
 #endif //LCD_LCD1602_H
