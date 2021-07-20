@@ -10,12 +10,15 @@ LCD1602 driver based on STM32 HAL library
 ``` C
 #include  "LCD1602.h" 
 ...
-、
-//显示 A
+
+//显示Hello world!
 void main()
 {
+	u8 text[] = "Hello world";
 	initLCD(0,GPIOX);
-	writeData(0x41);
+	makeCursor(0);
+	writeData(0x21);
+	writeText(text);
 	while(1);
 }
 ```
@@ -25,5 +28,4 @@ void main()
 - ```void writeData(u8 data)```		*写数据*- 
 - ```void writeText(u8* text)```		*写文字*
 - ```void deleteData()```					*删除一位*
-- ```void showCursor(u8 stopFlash)```	*显示光标 stopFLash->0:光标闪烁 1:光标不闪烁*
-- ```void closeCursor()```					*关闭光标*
+- ```void makeCursor(u8 cfg)```	*cfg->0:光标闪烁 1:光标不闪烁 >2:关闭光标*

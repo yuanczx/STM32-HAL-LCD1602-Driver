@@ -71,12 +71,11 @@ void deleteData() {
     }
     position--;
 }
-
-void showCursor(u8 stopFlash) {
-    //0；flash 1:stop flash
-    writeComd(0x0f - stopFlash);
-}
-
-void closeCursor() {
-    writeComd(0x0c);
+void makeCursor(u8 cfg) {
+    //0；showCursor 1:flash cursor >2:close cursor
+    if (cfg >= 2) {
+        writeComd(0x0c);
+        return;
+    }
+    writeComd(0x0f - cfg);
 }
