@@ -4,13 +4,14 @@
 LCD1602 driver based on STM32 HAL library
 
 ## 注意：
-- 使用前请正确配置*User Label* 如RW引脚对应*User Label*应设置成"RW"
+- 使用前请使用CubeMX正确配置*User Label* 如RW引脚对应*User Label*应设置成"RW"
 
 ## 基本使用：
 ``` C
 #include  "LCD1602.h" 
 ...
-
+、
+//显示 A
 void main()
 {
 	initLCD(0,GPIOX);
