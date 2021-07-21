@@ -15,17 +15,20 @@ LCD1602 driver based on STM32 HAL library
 void main()
 {
 	u8 text[] = "Hello world";
-	initLCD(0,GPIOX);
-	makeCursor(0);
-	writeData(0x21);
-	writeText(text);
+  	initLCD(0,0,GPIOB);
+  	makeCursor(0);
+  	writeText(text);
+  	writeData(0x21);
+  	placeText(0,1,text);
+  	writeData(0x21);
 	while(1);
 }
 ```
 ## 方法说明：
-- ```void initLCD(u8 position,GPIO_TypeDef* DATA_PORT)```	*初始化LCD position->显示位置 DATA_PORT->数据端口*
+- ```void initLCD(u8 x,u8 y,GPIO_TypeDef* DATA_PORT)```	*初始化LCD x->列 y:行 DATA_PORT->数据端口*
 - ```void writeComd(u8 comd)``` 		*写指令*
 - ```void writeData(u8 data)```		*写数据*- 
-- ```void writeText(u8* text)```		*写文字*
-- ```void deleteData()```					*删除一位*
+- ```void writeText(u8* text)```		*写文本*
+- ```void placeText(u8 x,u8 y,u8* text)``` *x->列 y:行 text:文本*
+- ```void deleteData()```					*删除*
 - ```void makeCursor(u8 cfg)```	*cfg->0:光标闪烁 1:光标不闪烁 >2:关闭光标*
