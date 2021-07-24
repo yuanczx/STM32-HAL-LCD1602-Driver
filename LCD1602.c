@@ -2,7 +2,7 @@
 // Created by yuanYue on 2021/7/19.
 //
 
-#include "../Inc/LCD1602.h"
+#include "LCD1602.h"
 
 GPIO_TypeDef *GPIOP;
 volatile static u8 position = 0x80;
@@ -43,7 +43,6 @@ void writeData(u8 data) {
     HAL_GPIO_WritePin(E_GPIO_Port, E_Pin, 0);
 
     if (position == 0x8F) {
-        HAL_GPIO_TogglePin(LED_0_GPIO_Port, LED_0_Pin);
         writeComd(0xc0);
         position = 0xc0;
         return;

@@ -1,10 +1,12 @@
 # STM32-HAL-LCD1602-Driver
-基于STM32 HAL库的LCD1602驱动
+基于*STM32 HAL*库的*LCD1602*驱动
 
 LCD1602 driver based on STM32 HAL library
 
 ## 注意：
-- 使用前请使用CubeMX正确配置*User Label* 如RW引脚对应*User Label*应设置成"RW"
+- 使用前请使用CubeMX正确配置*User Label* 如RW引脚对应*User Label*应设置成"RW (也可以使用宏定义)"
+- 在CubeMX的*Project Manager*中的*Code Generator*选项勾选*Generate peripheral initialization as a pair of.c/h files per peripheral*
+- LCD1602的数据引脚应接到STM32引脚的低八位
 
 ## 基本使用：
 ``` C
@@ -15,7 +17,7 @@ LCD1602 driver based on STM32 HAL library
 void main()
 {
 	u8 text[] = "Hello world";
-  	initLCD(0,0,GPIOB);
+  	initLCD(0,0,GPIOX);
   	makeCursor(0);
   	writeText(text);
   	writeData(0x21);
