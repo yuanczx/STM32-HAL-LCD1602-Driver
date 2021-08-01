@@ -6,7 +6,7 @@ LCD1602 driver based on STM32 HAL library
 ## 注意：
 - 使用前请使用CubeMX正确配置*User Label* 如RW引脚对应*User Label*应设置成"RW (也可以使用宏定义)"
 - 在CubeMX的*Project Manager*中的*Code Generator*选项勾选*Generate peripheral initialization as a pair of.c/h files per peripheral*
-- LCD1602的数据引脚应接到STM32引脚的低八位
+- LCD1602的数据引脚应接到STM32引脚的低八位（若设置为高八位请左移八位）
 
 ## 基本使用：
 ``` C
