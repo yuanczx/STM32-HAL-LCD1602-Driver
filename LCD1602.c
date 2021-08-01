@@ -83,7 +83,7 @@ void makeCursor(u8 cfg) {
     writeComd(0x0f - cfg);
 }
 
-void placeText(u8 *text, u8 x, u8 y) {
+void placeText(u8 x, u8 y, u8 *text) {
     if (y) position = 0xC0;
     position += x;
     writeComd(position);
