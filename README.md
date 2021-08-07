@@ -10,6 +10,7 @@ LCD1602 driver based on STM32 HAL library
 
 ## 基本使用：
 ``` C
+C语言版本
 #include  "LCD1602.h" 
 ...
 
@@ -23,6 +24,24 @@ void main()
   	writeData(0x21);
   	placeText(0,1,text);
   	writeData(0x21);
+	while(1);
+}
+```
+``` C++
+C++版本
+#include  "LCD1602.h" 
+...
+
+//显示Hello world!
+void main()
+{
+	u8 text[] = "Hello world";
+  	LCD1602 lcd(0,0,GPIOB);
+  	lcd.makeCursor(0);
+  	lcd.writeText(text);
+  	lcd.writeData(0x21);
+  	lcd.placeText(0,1,text);
+  	lcd.writeData(0x21);
 	while(1);
 }
 ```
