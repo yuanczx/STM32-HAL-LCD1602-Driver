@@ -1,4 +1,4 @@
-# STM32-HAL-LCD1602-Driver
+# STM32-LCD1602驱动
 基于*STM32 HAL*库的*LCD1602*驱动
 
 LCD1602 driver based on STM32 HAL library
