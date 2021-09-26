@@ -10,7 +10,7 @@ LCD1602 driver based on STM32 HAL library
 
 ## 基本使用：
 ``` C
-C语言版本
+C ：
 #include  "LCD1602.h" 
 ...
 
@@ -28,7 +28,7 @@ void main()
 }
 ```
 ``` C++
-C++版本
+C++ ：
 #include  "LCD1602.h" 
 ...
 
